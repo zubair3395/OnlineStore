@@ -1,0 +1,133 @@
+a{
+  text-decoration: none;
+  color: black;
+}
+.slide-row{
+    align-items: center;
+}
+.text-slide{
+    margin-left: 5rem;
+    width: 100%;
+}
+.picture-slide{
+    width: 100%;  
+}
+.picture-slide1{
+   height: 95vh;
+   box-sizing: border-box;
+}
+.card1{
+    display: flex;
+    width: 25rem;
+    height: 15rem;
+    background-color: rgb(222, 203, 206);
+   box-shadow: 0rem 0.3rem 0.3rem pink;
+   border-radius: 2rem;
+  }
+  .card-image{
+    margin-left: 12rem;
+    height: 10rem;
+    width: 15rem;
+  }
+  .box1{
+    position: absolute;
+    margin: 1rem 3rem 1rem 1rem;
+    overflow: hidden;
+  }
+  .card1 :hover{
+    cursor: pointer;
+    background-color: pink;
+    overflow: hidden;
+    border-radius: 2rem;
+  }
+  .card2{
+    width: 20rem;
+    border-radius: 2rem;
+    box-shadow: 1px 3px 3px lightblue;
+  }
+  .shirt{
+    background-color: rgb(245, 237, 237);
+    border-radius: 2rem;
+  }
+  .shrit1{
+    overflow: hidden;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 2rem;
+  }
+  .information{
+    margin-left: 1rem;
+  }
+  .dollar{
+    display: flex;
+  }
+  .shirt :hover{
+    background-color: lightgray;
+    border-radius: 2rem;
+    display: block;
+  }  
+  .fot{
+    width: 100%;
+    height: 450px;
+    border: rgb(40, 215, 183) solid 4px;
+    padding: 20px;
+    /* display: flex; */
+    background-color: aquamarine;
+    border-radius: 10px;
+  }
+  .head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    background-color: antiquewhite;
+    height: 100px;
+    border-bottom: darkgrey solid 2px;
+    /* border: black solid 2px; */
+  }
+  .middle{
+    background-color: antiquewhite;
+    width: 100%;
+    height: 250px;
+    border-bottom: darkgrey solid 2px;
+    /* border: gray solid 2px; */
+    display: flex;
+    justify-content: space-around;
+  }
+  .middle-item{
+    width: 250px;
+    height: 245px;
+    /* border: red solid 2px; */
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+
+  }
+  .bottom{
+    background-color: antiquewhite;
+    width: 100%;
+    height: 50px;
+    /* border: black solid 2px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .head-item{
+    width: 500px;
+    height: 100px;
+    /* border: gray solid 2px; */
+    display: flex;
+    justify-content: space-around;
+  }
+  .middle-item-heading{
+    width: 200px;
+    height: 50px;
+    /* border: yellow solid 2px; */
+    text-align: center;
+  }
+  .middle-item-text{
+    width: 200px;
+    height: 140px;
+    /* border: red solid 2px; */
+    text-align: center;
+  }
