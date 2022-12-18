@@ -3,23 +3,25 @@ import {useState, useEffect} from 'react';
 import Card from './Card';
 import Total from './Total';
 import CartNavbar from './CartNavbar';
+import LocalData from '../localData/LocalData';
 
-function ShoppingCart() {
+function ShoppingCart({cartItems}) {
+  console.log("cartitems in shopping", LocalData.cart)
   const [total, SetTotal ] = useState(0);
-  const [productList, setProductList] = useState([]);
+  const [productList, setProductList] = useState(LocalData.cart);
   const [searchedData, setSearchedData]= useState("");
-     function getData(){
-    fetch('http://localhost:3004/Collection')
-        .then(res=>res.json())
-        .then(json=>  setProductList(json))
-       }
+    //  function getData(){
+    // fetch('http://localhost:3004/Collection')
+    //     .then(res=>res.json())
+    //     .then(json=>  setProductList(json))
+    //    }
        function getSearchedData(){
         let tempArr= productList.filter((data) => data.category.toLowerCase().includes(searchedData));
         setProductList(tempArr);
       }
-  useEffect(()=>{
-     getData()
-  },[])
+  // useEffect(()=>{
+  //    getData()
+  // },[])
   function decrement(id){     
     let tempArray = productList;
     if(tempArray[id].quantity>0){

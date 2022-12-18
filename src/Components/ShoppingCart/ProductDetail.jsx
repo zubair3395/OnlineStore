@@ -4,25 +4,25 @@ import { Link } from "react-router-dom";
 export const ProductDetail = () => {
   const { id } = useParams();
   const [product, setproduct] = useState([]);
- const [review, setReview] = useState("");
- const [customer, setCustomer] = useState("")
- function handleReview(){
-    let reviewObj={
-      review,
-      customer
-    }
+//  const [review, setReview] = useState("");
+//  const [customer, setCustomer] = useState("")
+//  function handleReview(){
+//     let reviewObj={
+//       review,
+//       customer
+//     }
     
-    localStorage.setItem("review", JSON.stringify(reviewObj.review));
+//     localStorage.setItem("review", JSON.stringify(reviewObj.review));
     
-    fetch("http://localhost:3004/Reviews",{
-      method: "Post",
-      headers: {
-        "content-type": "application/json",
-        "accept": "application/json"
-      },
-      body:  JSON.stringify(reviewObj)
-    }).then((response)=> response.json())
- }
+//     fetch("http://localhost:3004/Reviews",{
+//       method: "Post",
+//       headers: {
+//         "content-type": "application/json",
+//         "accept": "application/json"
+//       },
+//       body:  JSON.stringify(reviewObj)
+//     }).then((response)=> response.json())
+//  }
 
   useEffect(() => {
     fetch(`http://localhost:3004/Collection/${id}`)
@@ -58,14 +58,14 @@ export const ProductDetail = () => {
           <Link to="/shoppingCart" className="btn btn-outline-info">Go to Cart</Link> 
         </div>
         </div>
-        <div className="row">
+        {/* <div className="row">
         <h3>Enter your Review</h3>
         <label htmlFor="name" className="my-3"> Enter your Name</label>
         <input type="text" id="name" className="form-control my-2 rounded-5" placeholder="Enter your name" onChange={(e)=> setCustomer(e.target.value)}/>
         <label htmlFor="review" className="my-3"> Your Review</label>
         <input id="review" type="text" className="form-control my-2 rounded-5" placeholder="Enter your Review" onChange={(e)=> setReview(e.target.value)}/>
         </div>
-        <button type="button" className="btn btn-outline-info" onClick={handleReview}>Submit Review</button>
+        <button type="button" className="btn btn-outline-info" onClick={handleReview}>Submit Review</button> */}
         </div>
       </>
     )
