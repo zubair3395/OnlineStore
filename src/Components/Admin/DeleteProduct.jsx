@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 
-export const DeleteProduct = () => {
+ const DeleteProduct = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -105,3 +105,4 @@ export const DeleteProduct = () => {
     </div>
   );
 };
+export default DeleteProduct;

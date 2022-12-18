@@ -3,7 +3,7 @@ import { React, useState, useEffect } from "react";
 import { useParams,Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
-export const AdminProductDetail = () => {
+ const AdminProductDetail = () => {
     const { id } = useParams();
 
   const [product, setproduct] = useState([]);
@@ -18,7 +18,7 @@ export const AdminProductDetail = () => {
   const ShowProductDetail = () => {
     return (
       <>
-      <Link className="btn btn-info" to="/admin/dashboard">Back to home</Link>
+      <Link className="btn btn-info" to="/admin/products">Back to home</Link>
         <div className="col-md-6">
           <img
             src={product.image}
@@ -33,11 +33,8 @@ export const AdminProductDetail = () => {
           <i className="fa fa-start"></i>
           <h3 className="display-6 fw-bold my-4"> $ {product.price}</h3>
           <p className="lead">{product.description}</p>
-          <buttom className="btn btn-outline-dark px-4 py-2">
-            Add to Cart
-          </buttom>
-          <NavLink to="/cart" className="btn btn-dark ms-2 px-3 py-2 ">
-            Go to Cart
+          <NavLink to="" className="btn btn-dark ms-2 px-3 py-2 ">
+            Delete
           </NavLink>
         </div>
       </>
@@ -55,3 +52,4 @@ export const AdminProductDetail = () => {
     </div>
   )
 }
+export default AdminProductDetail;

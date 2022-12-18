@@ -1,17 +1,17 @@
-import axios from "axios";
+
 import React from "react";
 import { useState } from "react";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
-export const CreateProduct = () => {
+const CreateProduct = () => {
   const [title, setTitle] = useState(localStorage.getItem("name"));
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
-  // const [image, setImage] = useState("");
+  const [image, setImage] = useState("");
   const [category, setCategory] = useState("");
 
-  const username = localStorage.getItem("username");
+  // const username = localStorage.getItem("username");
 
   function submit(e) {
     e.preventDefault(); // Prevents page refresh on submit
@@ -19,7 +19,7 @@ export const CreateProduct = () => {
       title === "" ||
       description === "" ||
       price === "" ||
-      // image === "" ||
+      image === "" ||
       category === ""
     ) {
       toast.error("Fields cannot be Empty", { autoClose: 2000 });
@@ -29,7 +29,7 @@ export const CreateProduct = () => {
         price: price,
         description: description,
         category: category,
-        // image: image,
+        image: image,
       };
       fetch(`http://localhost:5000/products`, {
         method: "POST",
@@ -111,19 +111,18 @@ export const CreateProduct = () => {
                   onChange={(e) => setDescription(e.target.value)}
                 />
               </div>
+
               <div className="col-lg-8 col-md-6 col-sm-12 col-12">
-                <label className="form-label">Image</label>
-                <input
-                  type="file"
-                  className="myfile "
+                <label className="form-label">Image Link</label>
+                <textarea
+                  type="text"
+                  className="form-control "
                   required
-                  onChange={(e)=>{myHandler(e)}}
-                />
-                <input
-                  type="submit"
-                  value="upload"
+                  placeholder="Enter Content"
+                  onChange={(e) => setImage(e.target.value)}
                 />
               </div>
+              
               <div className="col-12 text-sm-center text-lg-start text-md-start text-center">
                 <button
                   type="submit"
@@ -142,3 +141,4 @@ export const CreateProduct = () => {
     </div>
   );
 };
+export default CreateProduct;
