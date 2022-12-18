@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
   const [product, setproduct] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products/${id}`)
+    fetch(`http://localhost:5000/Collection/${id}`)
       .then((response) => response.json())
       .then((json) => {
         setproduct(json);

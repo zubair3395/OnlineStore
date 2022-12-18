@@ -31,7 +31,7 @@ const CreateProduct = () => {
         category: category,
         image: image,
       };
-      fetch(`http://localhost:5000/products`, {
+      fetch(`http://localhost:5000/Collection`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

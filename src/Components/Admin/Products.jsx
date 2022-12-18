@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
   const [filter, setFilter] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products`)
+    fetch(`http://localhost:5000/Collection`)
       .then((response) => response.json())
       .then((json) => {
         setData(json);
