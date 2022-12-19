@@ -131,3 +131,15 @@ a{
     /* border: red solid 2px; */
     text-align: center;
   }
+
+  /* admin */
+  .container{
+    display: flex;
+    margin-top: 10px;
+}
+
+
+.link{
+    text-decoration: none;
+    color: inherit;
+}

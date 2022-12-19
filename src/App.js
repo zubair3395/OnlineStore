@@ -10,9 +10,19 @@ import Mens from './Components/PubicallyPages/Mens';
 import Women from './Components/PubicallyPages/Women';
 import Kids from './Components/PubicallyPages/Kids';
 import Shoes from './Components/PubicallyPages/Shoes';
-import AuthAdmin from './Components/Admin/AuthAdmin';
-import AdminPage from './Components/Admin/AdminPage';
-import LoginAdmin from './Components/Admin/AdminAuthentication/LoginAdmin';
+
+// admin
+import Sidebar from "./Components/Admin/components/sidebar/Sidebar";
+import Topbar from "./Components/Admin/components/topbar/Topbar";
+import Dashboard from "./Components/Admin/pages/dashboard/Dashboard";
+import { Router, Switch } from "react-router-dom";
+import UserList from "./Components/Admin/pages/userList/UserList";
+import User from "./Components/Admin/pages/user/User";
+import NewUser from "./Components/Admin/pages/newUser/NewUser";
+import ProductList from "./Components/Admin/pages/productList/ProductList";
+import Product from "./Components/Admin/pages/product/Product";
+import NewProduct from "./Components/Admin/pages/newProduct/NewProduct";
+
 function App() {
   return (
     <div className='bg-light'>
@@ -27,9 +37,38 @@ function App() {
       <Route path="/womenCollection" element={<Women/>}/>
       <Route path='/kidsCollection' element={<Kids/>}/>
       <Route path='/shoesCollection' element={<Shoes/>}/>
-      <Route path='/Adminpage' element={<AuthAdmin><AdminPage/></AuthAdmin>}/>
-      <Route path='/AdminLogin' element={<LoginAdmin/>}/>
     </Routes>
+
+    {/* admin */}
+    <Router>
+      <Topbar />
+      <div className="container">
+        <Sidebar />
+        <Switch>
+          <Route exact path="/admin">
+            <Dashboard />
+          </Route>
+          <Route path="/admin/users">
+            <UserList />
+          </Route>
+          <Route path="/admin/user/:userId">
+            <User />
+          </Route>
+          <Route path="/admin/newUser">
+            <NewUser />
+          </Route>
+          <Route path="/admin/products">
+            <ProductList />
+          </Route>
+          <Route path="/admin/product/:productId">
+            <Product />
+          </Route>
+          <Route path="/admin/newproduct">
+            <NewProduct />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
     
     </BrowserRouter>
     
