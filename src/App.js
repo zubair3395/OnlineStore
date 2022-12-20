@@ -45,27 +45,13 @@ function App() {
       <div className="container">
         <Sidebar />
         <Switch>
-          <Route exact path="/admin">
-            <Dashboard />
-          </Route>
-          <Route path="/admin/users">
-            <UserList />
-          </Route>
-          <Route path="/admin/user/:userId">
-            <User />
-          </Route>
-          <Route path="/admin/newUser">
-            <NewUser />
-          </Route>
-          <Route path="/admin/products">
-            <ProductList />
-          </Route>
-          <Route path="/admin/product/:productId">
-            <Product />
-          </Route>
-          <Route path="/admin/newproduct">
-            <NewProduct />
-          </Route>
+          <Route exact path="/admin" element={<Dashboard />}/>
+          <Route path="/admin/users" element={<UserList />}/>
+          <Route path="/admin/user/:userId" element={<User />}/>
+          <Route path="/admin/newUser" element={<NewUser />}/>
+          <Route path="/admin/products" element={<ProductList />}/>
+          <Route path="/admin/product/:productId" element={<Product />}/>
+          <Route path="/admin/newproduct" element={<NewProduct />}/>
         </Switch>
       </div>
     </Router>
