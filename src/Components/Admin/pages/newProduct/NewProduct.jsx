@@ -33,7 +33,7 @@ export default function NewProduct() {
         image: image,
         stock : stock
       };
-      fetch(`http://localhost:5000/products`, {
+      fetch(`http://localhost:3004/Collection`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,7 +45,7 @@ export default function NewProduct() {
             position: "top-center",
             autoClose: 2000,
             onClose: () => {
-              NavLink("/products");
+              NavLink('/admin/newproduct');
             },
           });
         }

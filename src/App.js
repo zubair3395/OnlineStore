@@ -18,7 +18,6 @@ import Dashboard from "./Components/Admin/pages/dashboard/Dashboard";
 import { Router, Switch } from "react-router-dom";
 import UserList from "./Components/Admin/pages/userList/UserList";
 import User from "./Components/Admin/pages/user/User";
-import NewUser from "./Components/Admin/pages/newUser/NewUser";
 import ProductList from "./Components/Admin/pages/productList/ProductList";
 import Product from "./Components/Admin/pages/product/Product";
 import NewProduct from "./Components/Admin/pages/newProduct/NewProduct";
@@ -39,23 +38,24 @@ function App() {
       <Route path='/shoesCollection' element={<Shoes/>}/>
     </Routes>
 
+    
+    
+    </BrowserRouter>
+
     {/* admin */}
-    <Router>
+    <BrowserRouter>
       <Topbar />
-      <div className="container">
+      <div className="adjust">
         <Sidebar />
-        <Switch>
-          <Route exact path="/admin" element={<Dashboard />}/>
+        <Routes>
+          <Route exact path="/admin/dashboard" element={<Dashboard />}/>
           <Route path="/admin/users" element={<UserList />}/>
           <Route path="/admin/user/:userId" element={<User />}/>
-          <Route path="/admin/newUser" element={<NewUser />}/>
           <Route path="/admin/products" element={<ProductList />}/>
           <Route path="/admin/product/:productId" element={<Product />}/>
           <Route path="/admin/newproduct" element={<NewProduct />}/>
-        </Switch>
+        </Routes>
       </div>
-    </Router>
-    
     </BrowserRouter>
     
     </div>

@@ -10,7 +10,7 @@ export default function UserList() {
   const [response,setResponse]= useState(false)
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users`)
+    fetch(`http://localhost:3004/users`)
       .then((response) => response.json())
       .then((json) => {
         setData(json);
@@ -23,7 +23,7 @@ export default function UserList() {
     }
 
   function DeleteMethod(dataID) {
-    fetch(`http://localhost:5000/users/${dataID}`, {
+    fetch(`http://localhost:3004/users/${dataID}`, {
       method: "DELETE",
     }).then((res) => {
       if (res.status === 200) {
@@ -59,7 +59,7 @@ export default function UserList() {
       renderCell: (params) => {
         return (
           <>
-            <Link to={"/user/" + params.row.id}>
+            <Link to={"/admin/user/" + params.row.id}>
               <button className="userListEdit">Edit</button>
             </Link>
             <DeleteOutline

@@ -10,7 +10,7 @@ export default function ProductList() {
   const [response,setResponse]= useState(false)
   
     useEffect(() => {
-      fetch(`http://localhost:5000/products`)
+      fetch(`http://localhost:3004/Collection`)
         .then((response) => response.json())
         .then((json) => {
           setData(json);
@@ -23,7 +23,7 @@ export default function ProductList() {
       }
   
     function DeleteMethod(dataID) {
-      fetch(`http://localhost:5000/products/${dataID}`, {
+      fetch(`http://localhost:3004/Collection/${dataID}`, {
         method: "DELETE",
       }).then((res) => {
         if (res.status === 200) {
@@ -67,7 +67,7 @@ export default function ProductList() {
       renderCell: (params) => {
         return (
           <>
-            <Link to={"/product/" + params.row.id}>
+            <Link to={"/admin/product/" + params.row.id}>
               <button className="productListEdit">Edit</button>
             </Link>
             <DeleteOutline
