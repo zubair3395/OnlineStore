@@ -21,6 +21,7 @@ import User from "./Components/Admin/pages/user/User";
 import ProductList from "./Components/Admin/pages/productList/ProductList";
 import Product from "./Components/Admin/pages/product/Product";
 import NewProduct from "./Components/Admin/pages/newProduct/NewProduct";
+import Order from "./Components/Admin/pages/orders/order";
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
           <Route path="/admin/products" element={<ProductList />}/>
           <Route path="/admin/product/:productId" element={<Product />}/>
           <Route path="/admin/newproduct" element={<NewProduct />}/>
+          <Route path="/admin/orders" element={<Order />}/>
         </Routes>
       </div>
     </BrowserRouter>

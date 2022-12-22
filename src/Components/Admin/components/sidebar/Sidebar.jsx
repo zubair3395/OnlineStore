@@ -5,7 +5,7 @@ import {
   TrendingUp,
   PermIdentity,
   Storefront,
-  // AttachMoney,
+  AttachMoney,
   BarChart,
   MailOutline,
   DynamicFeed,
@@ -22,10 +22,10 @@ export default function Sidebar() {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Dashboard</h3>
           <ul className="sidebarList">
-            <Link to="/admin/dashboard" className="link">
+            <Link to="/admin" className="link">
             <li className="sidebarListItem active">
               <LineStyle className="sidebarIcon" />
-              Dashboard
+              Home
             </li>
             </Link>
             <li className="sidebarListItem">
@@ -68,10 +68,12 @@ export default function Sidebar() {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Notifications</h3>
           <ul className="sidebarList">
+          <Link to="/admin/orders" className="link">
             <li className="sidebarListItem">
-              <MailOutline className="sidebarIcon" />
-              Mail
+              <Storefront className="sidebarIcon" />
+              Orders
             </li>
+            </Link>
             <li className="sidebarListItem">
               <DynamicFeed className="sidebarIcon" />
               Feedback
