@@ -3,7 +3,7 @@ import React from 'react'
 export default function Slider() {
   return (
     <>
-       <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel" data-aos="fade-up-right">
+       <div id="carouselExampleControls" className="carousel slide slider-padding" data-bs-ride="carousel" data-aos="fade-up-right">
     <div className="carousel-inner">
       <div className="carousel-item active">
         <div className="row bg-primary bg-opacity-25 slide-row">

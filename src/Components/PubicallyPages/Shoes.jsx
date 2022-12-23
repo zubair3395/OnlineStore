@@ -1,6 +1,7 @@
 import React from 'react'
 import CardDesign from './CardDesign';
 import { useState, useEffect } from 'react';
+import Footer from './Footer';
 export default function Shoes() {
 
     const [allCollection, setAllCollection] = useState([]);
@@ -17,6 +18,7 @@ export default function Shoes() {
   return (
     <>
       <CardDesign collection={shoesCollection} product="Shoes New Arrival Collection"/>
+      <Footer/>
     </>
   )
 }

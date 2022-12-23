@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 export default function Signup() {
  const [ name, setName]= useState("");
  const [email, setEmail] = useState("");
@@ -13,6 +14,11 @@ export default function Signup() {
     email,
     password
   }
+  if(user.name.length<5 || user.email.length<5 || user.password.length<5){
+    toast("You must enter at least 5 character for each field")
+  }
+  else
+  {
   localStorage.setItem("name", JSON.stringify(user.name));
   fetch("http://localhost:3004/users", {
     method: "Post",
@@ -23,12 +29,13 @@ export default function Signup() {
     body:  JSON.stringify(user)
   }).then((response)=> response.json())
     navigate("/shoppingCart");
+   }
  }
 
   return (
     <>
-        <div className="container h-100">
-          <div className="row d-flex justify-content-center align-items-center h-100">
+        <div className='container'>
+         <div className="row d-flex justify-content-center align-items-center h-100">
             <div className="col-12 col-md-8 col-lg-6 col-xl-5 mt-3">
               <div
                 className="cards text-white"
@@ -100,7 +107,8 @@ export default function Signup() {
               </div>
             </div>
           </div>
-        </div>
+        <ToastContainer/>
+         </div>
    
     </>
   )

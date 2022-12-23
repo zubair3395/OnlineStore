@@ -1,19 +1,27 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
+import TotalPayment from '../localData/TotalPayment';
+import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 export default function Total({total}) {
     const [order, setOrder] = useState(0);
+    const navigate = useNavigate()
     useEffect(()=>{
       setOrder(total+25+24);
     })
-   function handleCheckOut(){
-    if(total>49){
-    alert("Your order successfully")
-   }
-   else
-   {
-   alert("Please order something");
-   }
+  const handleTotal = ()=> {
+    if (order <= 49){
+      toast("Please order some thing")
+    }
+    else
+    {
+      let tempItem = TotalPayment.pay;
+      tempItem.push(order);
+      TotalPayment.pay = tempItem;
+      navigate("/SubmitPayment")
+    }
+  
   }
   return (
     <>
@@ -33,7 +41,7 @@ export default function Total({total}) {
         <hr />
         <div className="row">
           <div className="col-md">
-           <p>Shopping Estimate</p> 
+           <p>Estimate</p> 
           </div>
           <div className="col-md mx-5">
             <p> $24</p>
@@ -42,7 +50,7 @@ export default function Total({total}) {
         <hr />
         <div className="row">
           <div className="col-md">
-           <p>Tax estimate</p> 
+           <p>Tax</p> 
           </div>
           <div className="col-md mx-5">
             <p> $25</p>
@@ -58,7 +66,8 @@ export default function Total({total}) {
           </div>
         </div>
         <div className='row'>
-          <button className='btn btn-info p-2 rounded-5 mt-3' onClick={handleCheckOut}> <strong>Checkout</strong> </button>
+          <button className='btn btn-info p-2 w-100 rounded-5' onClick={handleTotal}> <strong>Checkout</strong> </button>
+        <ToastContainer/>
         </div>
          </div>
       

@@ -2,10 +2,13 @@ import React from 'react'
 import Buttons from './Buttons'
 import { Link } from 'react-router-dom';
 
-export default function Card({increment, decrement, arr}) {
+export default function Card({increment, decrement, arr, handleDelete}) {
+
+
 return (
       <>      
-        { arr.map((element , index) =>
+      
+        { arr?.map((element , index) =>
         
         <div className='row shadow my-5 mx-3 rounded-3' key={index}>
           <div className="col-md">
@@ -13,7 +16,7 @@ return (
           </div>
           <div className="col-md my-3">
             <div className="row">
-              <strong>{element.title.slice(0,15)}...</strong>
+              <strong>{element.title.slice(0,10)}...</strong>
             </div>
             <div className="row">
               <p>Black |  XL</p>
@@ -30,9 +33,9 @@ return (
           </div>
           <div className="col-md">
             <button className='btn btn-outline-info mx-5 my-3'>Price: {element.price}</button>
-          <Link to={`/productDetail/${element.id}`} className="btn btn-outline-info my-5 mx-5">Buy Now</Link>
+          <button className="btn btn-outline-danger my-5 mx-5" onClick={()=> handleDelete(element.id)}>Delete</button>
           </div>
-          </div>      
+          </div>     
        )}                  
     </>
   )
