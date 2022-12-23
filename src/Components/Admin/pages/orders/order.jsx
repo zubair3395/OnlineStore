@@ -11,7 +11,7 @@ export default function Order() {
   const [response,setResponse]= useState(false)
   
     useEffect(() => {
-      fetch(`http://localhost:3004/Collection`)
+      fetch(`http://localhost:3004/orders`)
         .then((response) => response.json())
         .then((json) => {
           setData(json);
@@ -24,7 +24,7 @@ export default function Order() {
       }
   
     function DeleteMethod(dataID) {
-      fetch(`http://localhost:3004/Collection/${dataID}`, {
+      fetch(`http://localhost:3004/orders/${dataID}`, {
         method: "DELETE",
       }).then((res) => {
         if (res.status === 200) {
@@ -38,37 +38,39 @@ export default function Order() {
   const columns = [
     { field: "id", headerName: "ID", width: 90 },
     {
-      field: "title",
-      headerName: "Product",
+      field: "name",
+      headerName: "Purchaser",
       width: 200,
       renderCell: (params) => {
         return (
           <div className="productListItem">
-            <img className="productListImg" src={params.row.image} alt="" />
-            {params.row.title}
+            {params.row.name}
           </div>
         );
       },
     },
-    { field: "stock", headerName: "Stock", width: 200 },
+    { field: "email", headerName: "Email", width: 200 },
     {
-      field: "category",
-      headerName: "category",
+      field: "status",
+      headerName: "Status",
       width: 120,
     },
     {
-      field: "price",
+      field: "totalPrice",
       headerName: "Price",
       width: 160,
     },
     {
       field: "action",
       headerName: "Action",
-      width: 150,
+      width: 190,
       renderCell: (data) => {
         return (
           <>
-            <NavLink to={`/product/${data.row.id}`}>
+          <NavLink to={`/admin/invoice/${data.row.id}`}>
+              <button className="productListEdit">Invoice</button>
+            </NavLink>
+            <NavLink to={`/admin/orders/${data.row.id}`}>
               <button className="productListEdit">Edit</button>
             </NavLink>
             <DeleteOutline
