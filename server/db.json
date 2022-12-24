@@ -271,51 +271,130 @@
       "quantity": 0
     }
   ],
-  "Reviews": [
+  "CustomerInfo": [
     {
-      "review": "Your website soo cool",
+      "address": "Bahawalnagar",
       "customer": "Muhammad Zubair",
+      "street": "Dunga Bunga",
       "id": 1
     },
     {
-      "review": "Your website soo cool",
-      "customer": "ali",
+      "address": "Lahore",
+      "customer": "Muhammad Zubair",
+      "street": "Revenue Society Johar Town",
       "id": 2
     },
     {
-      "review": "all varities are avaiablein low proce",
-      "customer": "abid",
+      "address": "Lahore",
+      "customer": "Muhammad Zubair",
+      "street": "Revenue Society Johar Town",
       "id": 3
     },
     {
-      "review": "",
-      "customer": "",
+      "address": "Lahore",
+      "customer": "Muhammad Zubair",
+      "street": "Revenue Society Johar Town",
       "id": 4
     },
     {
-      "review": "",
-      "customer": "",
+      "address": "Lahore",
+      "customer": "Muhammad ali",
+      "street": "Revenue Society Johar Town",
+      "temp": 1549,
       "id": 5
     },
     {
-      "review": "",
-      "customer": "",
+      "address": "Lahore",
+      "customer": "Muhammad ali",
+      "street": "Revenue Society Johar Town",
+      "total_payment": 1549,
       "id": 6
     },
     {
-      "review": "",
-      "customer": "",
+      "address": "Lahore",
+      "customer": "Muhammad ali",
+      "street": "Revenue Society Johar Town",
+      "total_payment": 1549,
+      "CartItems": [
+        {
+          "id": 2,
+          "category": "women's clothing",
+          "title": "MBJ Women's Solid Short Sleeve Boat Neck V ",
+          "image": "https://tse4.mm.bing.net/th?id=OIP.yFsvGtvYr_YHZG_ibeWfbwHaLH&pid=Api&P=0",
+          "rating": 3.8,
+          "stock": 97,
+          "quantity": 3,
+          "price": 300
+        },
+        {
+          "id": 1,
+          "category": "men's clothing",
+          "title": "Mens Avant-Cushioned-Athletic-Navy",
+          "image": "https://chisnghiax.com/ciseco/static/media/17.7701cf9446a6b588de67.png",
+          "rating": 3.5,
+          "stock": 97,
+          "quantity": 3,
+          "price": 200
+        }
+      ],
       "id": 7
     },
     {
-      "review": "",
-      "customer": "",
+      "address": "Lahore",
+      "customer": "Muhammad Zubair",
+      "street": "Revenue Society Johar Town",
+      "total_payment": 49,
+      "CartItems": [
+        {
+          "id": 2,
+          "category": "women's clothing",
+          "title": "MBJ Women's Solid Short Sleeve Boat Neck V ",
+          "image": "https://tse4.mm.bing.net/th?id=OIP.yFsvGtvYr_YHZG_ibeWfbwHaLH&pid=Api&P=0",
+          "rating": 3.8,
+          "stock": 100,
+          "quantity": 0,
+          "price": 300
+        }
+      ],
       "id": 8
     },
     {
-      "review": "jkgj",
-      "customer": "igu",
+      "address": "Lahore",
+      "customer": "Muhammad Zubair",
+      "street": "Revenue Society Johar Town",
+      "total_payment": 49,
+      "CartItems": [
+        {
+          "id": 2,
+          "category": "women's clothing",
+          "title": "MBJ Women's Solid Short Sleeve Boat Neck V ",
+          "image": "https://tse4.mm.bing.net/th?id=OIP.yFsvGtvYr_YHZG_ibeWfbwHaLH&pid=Api&P=0",
+          "rating": 3.8,
+          "stock": 100,
+          "quantity": 0,
+          "price": 300
+        }
+      ],
       "id": 9
+    },
+    {
+      "address": "lahore",
+      "customer": "zubair",
+      "street": "",
+      "total_payment": 249,
+      "CartItems": [
+        {
+          "id": 1,
+          "category": "men's clothing",
+          "title": "Mens Avant-Cushioned-Athletic-Navy",
+          "image": "https://chisnghiax.com/ciseco/static/media/17.7701cf9446a6b588de67.png",
+          "rating": 3.5,
+          "stock": 99,
+          "quantity": 1,
+          "price": 200
+        }
+      ],
+      "id": 10
     }
   ]
 }

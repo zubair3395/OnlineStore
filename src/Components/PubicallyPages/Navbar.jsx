@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-export default function Navbar() {
+export default function Navbar({count}) {
   return (
     <>
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm ">
-        <div className="container ">
+      <nav className="navbar navbar-expand-lg navbar-light bg-white shadow">
+        <div className="container">
           <a className="navbar-brand fw-bold fs-4" href="/">
          <img src="https://chisnghiax.com/ciseco/static/media/logo.95d47bbac8db6c1e8f997bbf26ca05cf.svg" alt=""/>
           </a>
@@ -48,13 +48,13 @@ export default function Navbar() {
                 {" "}
                 <i className="fa fa-sign-in me-1"></i> Admin
               </Link>
-              <Link to="/UserSignup" className="btn btn-outline-info ms-2">
+              <Link to="/UserLogin" className="btn btn-outline-info ms-2">
                 {" "}
-                <i className="fa fa-user-plus me-1 "></i> Signup
+                <i className="fa fa-user-plus me-1 "></i> Login
               </Link>
               <Link to="/userLogin" className="btn btn-outline-info ms-2">
                 
-                <i className="fa fa-shopping-cart me-1"></i> Cart
+                <i className="fa fa-shopping-cart me-1"></i> Cart {count}
               </Link>
             </div>
           </div>

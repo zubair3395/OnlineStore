@@ -3,23 +3,23 @@ import {useState, useEffect} from 'react';
 import Card from './Card';
 import Total from './Total';
 import CartNavbar from './CartNavbar';
+import LocalData from '../localData/LocalData';
+import { useParams } from 'react-router-dom';
+// import TotalPayment from '../localData/TotalPayment';
 
 function ShoppingCart() {
+  const {id} = useParams();
   const [total, SetTotal ] = useState(0);
-  const [productList, setProductList] = useState([]);
+  const [users, setUsers] = useState({});
+  const [productList, setProductList] = useState(LocalData.cart);
   const [searchedData, setSearchedData]= useState("");
-     function getData(){
-    fetch('http://localhost:3004/Collection')
-        .then(res=>res.json())
-        .then(json=>  setProductList(json))
-       }
-       function getSearchedData(){
+       useEffect(()=>{
+        fetch(`http://localhost:3004/users/${id}`).then((response)=> response.json()).then((data)=> setUsers(data))
+       })
+  function getSearchedData(){
         let tempArr= productList.filter((data) => data.category.toLowerCase().includes(searchedData));
         setProductList(tempArr);
       }
-  useEffect(()=>{
-     getData()
-  },[])
   function decrement(id){     
     let tempArray = productList;
     if(tempArray[id].quantity>0){
@@ -36,13 +36,17 @@ function ShoppingCart() {
     let tempArray = productList;
     tempArray[id].quantity+=1;
     setProductList([...tempArray]);
-    let subPrice= total+ tempArray[id].price;
-    SetTotal(subPrice);
+    SetTotal(total+ tempArray[id].price);
      tempArray[id].stock-=1;
+  }
+  function handleDelete(id){
+   let tempArr = productList.filter((item) => item.id !== id)
+   setProductList(tempArr);
+   
   }
   return (
     <>
-       <CartNavbar/>
+       <CartNavbar users={users}/>
        <div className='container my-3'>
        <div className="row">
         <div className="col-md">
@@ -54,17 +58,14 @@ function ShoppingCart() {
           <button className='btn btn-outline-info my-1' onClick={getSearchedData}>Find</button>
         </div>
        </div>
-     
-       
        </div>
        <div className="row">
         <div className="col-md-8">
           <hr />
-        <Card decrement={decrement} increment={increment}  arr={productList} />
+        <Card decrement={decrement} increment={increment}  arr={productList} handleDelete={handleDelete}/>
         </div>
-        
         <div className="col-md-4">
-        <Total total={total} className="postion-fixed"/>
+        <Total total={total} users={users} className="postion-fixed"/>
         </div>
        </div>
     </>

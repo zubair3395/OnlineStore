@@ -13,7 +13,10 @@ import Shoes from './Components/PubicallyPages/Shoes';
 import AuthAdmin from './Components/Admin/AuthAdmin';
 import AdminPage from './Components/Admin/AdminPage';
 import LoginAdmin from './Components/Admin/AdminAuthentication/LoginAdmin';
+import SubmitPayment from './Components/ShoppingCart/SubmitPayment';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
+ 
   return (
     <div className='bg-light'>
     <BrowserRouter>
@@ -22,7 +25,8 @@ function App() {
       <Route path='/UserLogin' element={<Login/>}/>
       <Route path='/productDetail/:id' element={<ProductDetail/>}/>
       <Route path='/UserSignup' element={<Signup/>}/>
-      <Route path='/shoppingCart' element={<Auth><ShoppingCart/></Auth>}/>
+      <Route path='/shoppingCart/:id' element={<Auth><ShoppingCart/></Auth>}/>
+      <Route path='/SubmitPayment' element={<SubmitPayment/>}/>
       <Route path='/menCollection' element={<Mens/>}/>
       <Route path="/womenCollection" element={<Women/>}/>
       <Route path='/kidsCollection' element={<Kids/>}/>
@@ -30,7 +34,6 @@ function App() {
       <Route path='/Adminpage' element={<AuthAdmin><AdminPage/></AuthAdmin>}/>
       <Route path='/AdminLogin' element={<LoginAdmin/>}/>
     </Routes>
-    
     </BrowserRouter>
     
     </div>

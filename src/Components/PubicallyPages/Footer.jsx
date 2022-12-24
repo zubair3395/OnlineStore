@@ -28,24 +28,19 @@ export default function Footer() {
             <p>xyz@gmail.com</p>
         </div>
         <div className="col-md">
-        <a href="www.facebook.com"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook </a>
-        <a href="www.youtube.com"><i class="fa fa-youtube-play" aria-hidden="true"></i> YouTube</a>
-        <a href="www.twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a>
+        <a href="www.facebook.com"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook </a> <br />
+        <a href="www.youtube.com"><i class="fa fa-youtube-play" aria-hidden="true"></i> YouTube</a> <br />
+        <a href="www.twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a> <br />
         </div>
         <div className="col-md">
+            <p>Revenue Society</p>
             <p>Johar town lahore</p>
         </div>
         <div className="col-md">
-            <p>Discussion Forums</p>
+            <p>Help Desk</p>
+            <p>Title </p>
         </div>
       </div>
-      {/* <div className="row">
-       
-      <div className="col-md"><a href="www.telegram.com"><i class="fa fa-telegram" aria-hidden="true"></i> Telegram</a></div>
-      <div className="col-md"><a href="www.whatsapp.com"><i class="fa fa-whatsapp" aria-hidden="true"></i> Whatsapp</a></div>
-      <div className="col-md"><a href="www.email.com"><i class="fa fa-envelope" aria-hidden="true"></i> E-mail</a></div>
-      </div> */}
-     
       </div>
     </>
   )

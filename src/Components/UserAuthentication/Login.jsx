@@ -1,33 +1,35 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 export default function Login() {
-
   const [database, setDatabase] = useState([]);
-  const [specificID, setSpecificID]= useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-   const handleclick = ()=>{
-    navigate("/shoppingCart");
+   const handleclick = (id)=>{
+    navigate(`/shoppingCart/${id}`);
     }
-    console.log("userID", specificID);
   const handleSubmit= ()=>{
+    if (email.length<5 || password.length<5){
+      toast("Email and Password must be at least 5 character")
+    }
+    else{
    const userData = database.find((c)=> c.email===email)
    if(userData){
     if(userData.email=== email && userData.password=== password){
-      setSpecificID(userData.id);
       localStorage.setItem("email",JSON.stringify(userData.email));
       localStorage.setItem("password",JSON.stringify(userData.password));
-      handleclick();
+      handleclick(userData.id);
     }
     else{
-      alert("name or password invaild")
+      toast("name or password invaild")
     }
    }
    else{
-    alert("data can't found");
+    toast("User can't found!  please signin");
    }
+  }
   }
   useEffect(()=>{
     let url = "http://localhost:3004/users";
@@ -37,8 +39,8 @@ export default function Login() {
 
   return (
     <>
-        <div className="container h-100">
-          <div className="row d-flex justify-content-center align-items-center h-100">
+        <div className="container">
+          <div className="row d-flex justify-content-center align-items-center">
             <div className="col-12 col-md-8 col-lg-6 col-xl-5 mt-3">
               <div
                 className="cards text-white"
@@ -101,6 +103,7 @@ export default function Login() {
               </div>
             </div>
           </div>
+          <ToastContainer/>
         </div>
     </>
   )

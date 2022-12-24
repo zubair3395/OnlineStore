@@ -1,6 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-export default function CartNavbar() {
+import { Link, useResolvedPath } from 'react-router-dom'
+export default function CartNavbar({users}) {
+  // console.log("users name", users);
   return (
     <>
     <div>
@@ -43,11 +44,13 @@ export default function CartNavbar() {
             <div className="button">
               <Link to="/" className="btn btn-outline-info ms-2">
                 {" "}
-                <i className="fa fa-user-plus me-1 "></i> Signout
+                <i className="fa fa-user me-1 "></i> {users.name}
               </Link>
-              <Link to="/userLogin" className="btn btn-outline-info ms-2">
-                
-                <i className="fa fa-user-plus me-1"></i> username
+            </div>
+            <div className="button">
+              <Link to="/" className="btn btn-outline-info ms-2">
+                {" "}
+                <i class="fa fa-sign-out" aria-hidden="true"></i> Signout
               </Link>
             </div>
           </div>
